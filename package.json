@@ -1,0 +1,22 @@
+{
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "server",
+    "client",
+    "e2e"
+  ],
+  "scripts": {
+    "build:client": "yarn workspace bird-app-client build",
+    "dev": "yarn workspace bird-app-server dev",
+    "dev:debug": "yarn workspace bird-app-server dev:debug",
+    "heroku-postbuild": "yarn workspace bird-app-client build",
+    "start": "yarn workspace bird-app-server start",
+    "dev:cypress": "yarn workspace bird-app-server dev:e2e",
+    "e2e:open": "yarn workspace bird-app-e2e e2e:open",
+    "e2e:run": "yarn workspace bird-app-e2e e2e:run"
+  },
+  "engines": {
+    "node": "^16.18"
+  }
+}
