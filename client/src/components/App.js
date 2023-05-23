@@ -10,7 +10,6 @@ import TopBar from "./layout/TopBar";
 import UserPage from "./UserListPage";
 import ProfilePageShow from "./ProfilePageShow";
 
-
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(undefined);
   const fetchCurrentUser = async () => {
@@ -33,8 +32,9 @@ const App = (props) => {
       <Switch>
         <Route exact path="/" component={HomePage}/>
         <Route exact path="/users" component={UserPage}/>
-        <Route exact path="users/:id"
-        render={(props) => <ProfilePageShow user={currentUser} {...props}/>}/>
+        <Route exact path="/users/:id"
+          render={(props) => <ProfilePageShow user={currentUser} {...props}/>}
+        />
         <Route exact path="/users/new" component={RegistrationForm} />
         <Route exact path="/user-sessions/new" component={SignInForm} />
       </Switch>
