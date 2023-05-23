@@ -9,9 +9,9 @@ const HomePage = (props) => {
             <h2 >Birds Eye View</h2>
             <h3>A Birding App for Bird Enthusiasts!</h3>
                 
-        <div>
-            <p>Developed by Jessica Espinoza</p>
-        </div>
+            <div>
+                <p>Developed by Jessica Espinoza</p>
+            </div>
         </div>
     )
 }
