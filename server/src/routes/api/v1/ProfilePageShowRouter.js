@@ -1,22 +1,14 @@
 import express from "express"
 import objection from "objection"
-import { User } from "../../../models"
+import { User } from "../../../models/index.js"
 
 const ProfilePageShowRouter = new express.Router()
 
-ProfilePageShowRouter.get("/users/:id", async (req, res) => {
-        try {
-            const response = await fetch ( "/api/v1/users" )
-            if (!response.ok) {
-                const errorMessage = `${response.status} (${response.statusText})`
-                const error = new Error(errorMessage)
-                throw(error)
-            }
-            const userData = await response.json()
-
-        }
-    } catch (error) {
-        console.error(`Error in fetch: ${err.message}`)
-    }
+ProfilePageShowRouter.get("/:id", async (req, res) => {
+    const { name, description } = req.body
+    const { id } = req.user
+    const userId = req.params.id
+    console.log(req.body)
+})
 
 export default ProfilePageShowRouter
